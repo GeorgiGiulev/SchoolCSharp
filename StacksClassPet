@@ -1,0 +1,60 @@
+using System.Diagnostics;
+
+namespace WorkInHome
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<int, Pet> petObjects = new Dictionary<int, Pet>();
+            Pet pet1 = new Pet(1, "Cat", new DateTime(2020, 1, 2), 14.5, DateTime.Now);
+            Pet pet2 = new Pet(2, "Doggo", new DateTime(2021, 2, 2), 20.9, DateTime.Now);
+            Pet pet3 = new Pet(3, "Parrot", new DateTime(2019, 10, 12), 12, DateTime.Now);
+            petObjects[1] = pet1;
+            petObjects[2] = pet2;
+            petObjects[3] = pet3;
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Name of the second pet is " + petObjects[2].name);
+            Console.WriteLine("The birthday of the first pet is " + petObjects[1].birthday);
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Black;
+        }
+
+        class Pet
+        {
+            public int id { get; set; } 
+            public string name { get; set; }
+            public DateTime birthday { get; set; }
+            public double weight { get; set; }
+            public DateTime lastAppoitmentDate { get; set; }
+
+            public Pet(int id, string name, DateTime birthday, double weight, DateTime
+                lastAppointmentDate)
+            {
+                this.id = id;
+                this.name = name;
+                this.birthday = birthday;
+                this.weight = weight;
+                this.lastAppoitmentDate = lastAppoitmentDate;    
+
+            }
+
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+}
